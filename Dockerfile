@@ -24,7 +24,7 @@ RUN postconf -e 'smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt' && \
 
 COPY docker-entrypoint.sh /
 
-EXPOSE 25 587
+EXPOSE 25
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["postfix", "start-fg"]
