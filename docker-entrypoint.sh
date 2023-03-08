@@ -8,7 +8,7 @@ postconf -e "relayhost = [${SMTP_HOST}]:587" \
 "smtp_tls_security_level = encrypt" \
 "smtp_tls_note_starttls_offer = yes"
 
-echo "[${SMTP_HOST}]:587 ${SMTP_USERNAME}:${SMTPPASSWORD}" > /etc/postfix/sasl_passwd
+echo "[${SMTP_HOST}]:587 ${SMTP_USERNAME}:${SMTP_PASSWORD}" > /etc/postfix/sasl_passwd
 
 postmap hash:/etc/postfix/sasl_passwd
 
