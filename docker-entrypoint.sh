@@ -15,6 +15,7 @@ postmap hash:/etc/postfix/sasl_passwd
 ## Allow for overriding every config
 for e in ${!POSTFIX_*} ; do postconf -e "${e:8}=${!e}" ; done
 
+cp /etc/resolv.conf /var/spool/postfix/etc/resolv.conf
 rm -f /var/spool/postfix/pid/master.pid
 
 exec "$@"
